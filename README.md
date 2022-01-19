@@ -1,6 +1,6 @@
 # Front-end Developer Exercise
 
-Copyright 2021 Kin Workplace Software, LLC
+Copyright 2022 KinHR, LLC.
 
 ## Objective
 
