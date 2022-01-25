@@ -2,7 +2,7 @@
   <b-container>
     <b-row class="my-5">
       <b-col>
-        <h1>Company Inc.</h1>
+        <h1 class="company-header">Company Inc.</h1>
         <NuxtLink to="/">Home</NuxtLink>
         <NuxtLink to="pricing">Pricing</NuxtLink>
       </b-col>
@@ -21,4 +21,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  a.nuxt-link-exact-active{
+    font-weight: bold;
+  }
+
+  h1.company-header {
+    @media screen and (max-width: 990px) {
+      font-size: xx-large;
+    }
+  }
+  
+
+</style>

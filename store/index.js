@@ -1,6 +1,7 @@
-export const state = {
+export const state = () => ({
   pricingOptions: [
     {
+      id: 1,
       name: 'Free',
       cost: 0,
       features: [
@@ -13,6 +14,7 @@ export const state = {
       paid: false,
     },
     {
+      id: 2,
       name: 'Pro',
       cost: 15,
       features: [
@@ -25,6 +27,7 @@ export const state = {
       paid: true,
     },
     {
+      id: 3,
       name: 'Enterprise',
       cost: 29,
       features: [
@@ -38,12 +41,16 @@ export const state = {
     },
   ],
   chosenPlan: null,
-};
+});
 
 export const getters = {
   pricingOptions(state) {
     return state.pricingOptions;
   },
+
+  getName(state) {
+    return state.pricingOptions.name;
+  }
 };
 
 export const mutations = {};
