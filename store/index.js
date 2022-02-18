@@ -1,4 +1,5 @@
 export const state = {
+  header: "hello",
   pricingOptions: [
     {
       name: 'Free',
@@ -11,6 +12,7 @@ export const state = {
       ],
       cta: 'Sign up for free',
       paid: false,
+      variant: 'outline-primary',
     },
     {
       name: 'Pro',
@@ -23,6 +25,7 @@ export const state = {
       ],
       cta: 'Get started',
       paid: true,
+      variant: "primary",
     },
     {
       name: 'Enterprise',
@@ -35,6 +38,7 @@ export const state = {
       ],
       cta: 'Contact us',
       paid: true,
+      variant: "primary",
     },
   ],
   chosenPlan: null,
@@ -44,6 +48,11 @@ export const getters = {
   pricingOptions(state) {
     return state.pricingOptions;
   },
+
 };
 
-export const mutations = {};
+export const mutations = {
+  updateChosenPlan(state, newPlan) {
+    state.chosenPlan = newPlan
+  }
+};
