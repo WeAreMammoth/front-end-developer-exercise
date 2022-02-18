@@ -1,0 +1,29 @@
+body.darkMode {
+    background-color: #292929;
+    p, h1, h2, h3, h4 {
+        color: #fff;
+    }
+
+    .card {
+        border-color: #333;
+    }
+    .card-header {
+        background-color: #1f1f1f;
+        border-color: #333;
+        h6 {
+            color: #fff;
+        }
+    }
+    .card-body {
+        background-color: #1e1e1e;
+        color: #fff;
+    }
+    .modal-content {
+        background-color: #666;
+        color: #fff;
+        .close {
+            color: #f1f1f1;
+        }
+    }
+    
+}
