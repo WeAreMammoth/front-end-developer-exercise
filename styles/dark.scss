@@ -1,0 +1,48 @@
+$short-time: .2s;
+$med-time: .4s;
+$e: ease-in-out;
+$dark: #1a1a1a;
+$toggle: #262626;
+
+html {
+    transition: $short-time filter $e;
+    &.dark-mode {
+        filter: invert(100%);
+        img {
+            filter: invert(100%);
+        }
+    }
+}
+
+.toggle-wrap {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 25px;
+    background-color: $toggle;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+    transition: $med-time background-color $e;
+    .toggle {
+        position: absolute;
+        top: 0;
+        left: 2.5px;
+        right: auto;
+        bottom: 0;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        overflow: hidden;
+        transition: $med-time left $e;
+    }
+    &.dark-active {
+        > .toggle {
+            left: calc(100% - 22.5px);
+        }
+    }
+}
