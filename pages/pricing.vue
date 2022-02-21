@@ -15,10 +15,16 @@
         </p>
       </b-col>
     </b-row>
+    <b-row class="justify-content-center price-wrap">
+      <b-col lg="12">
+        <PricingCard />
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
 <script>
+
 export default {
   name: 'Pricing',
   layout: 'default',
@@ -30,5 +36,8 @@ export default {
 p {
   color: #6c757d;
   font-size: 1.25rem;
+}
+.price-wrap {
+  padding: 4rem 0 8rem;
 }
 </style>
