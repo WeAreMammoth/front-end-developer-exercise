@@ -1,0 +1,14 @@
+$dark-color: #222;
+
+body.dark-mode {
+  background-color: $dark-color;
+  color: #fff;
+
+  .card {
+    color: $dark-color;
+  }
+
+  .modal-content {
+    color: $dark-color;
+  }
+}
