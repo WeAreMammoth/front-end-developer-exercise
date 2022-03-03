@@ -7,7 +7,7 @@
     </b-row>
     <b-row class="justify-content-center">
       <b-col md="8">
-        <p>
+        <p class='pricing-description'>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
           tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
           officiis doloremque autem illum reiciendis libero dignissimos
@@ -15,20 +15,45 @@
         </p>
       </b-col>
     </b-row>
+
+    <b-row>
+      <div class='pricingCards'>
+        <PricingCard v-for="item in getPricingOptions" :key="item" :title="item.name" :price="item.cost" :description="item.features" :ctaText="item.cta" :isPaid="item.paid === true"/>
+        
+      </div>
+    </b-row>
   </b-container>
 </template>
 
 <script>
+import store from '../store';
+
 export default {
   name: 'Pricing',
   layout: 'default',
-  computed: {},
+  store,
+  computed:{
+    getPricingOptions(){ return this.$store.getters.pricingOptions }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+@import 'global';
+
 p {
-  color: #6c757d;
   font-size: 1.25rem;
 }
+
+.pricingCards {
+  display: block;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: flex;
+  }
+}
+
 </style>

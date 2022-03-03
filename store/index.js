@@ -1,4 +1,16 @@
+import Vuex from 'vuex'
+import Vue from 'vue'
+
+Vue.use(Vuex)
+
+export default () => new Vuex.Store({
+  state,
+  mutations,
+  getters,
+})
+
 export const state = {
+  chosenPlan: 'No Plan Chosen',
   pricingOptions: [
     {
       name: 'Free',
@@ -44,6 +56,13 @@ export const getters = {
   pricingOptions(state) {
     return state.pricingOptions;
   },
+  planName(state) {
+    return state.chosenPlan;
+  },
 };
 
-export const mutations = {};
+export const mutations = {
+  setPlan (state, planName) {
+    state.chosenPlan = planName;
+  } 
+}
