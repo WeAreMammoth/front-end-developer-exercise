@@ -19,5 +19,63 @@ export default {
 <style lang='scss'>
 @import 'global';
 
+.pricing {
+  &-description {
+    color: $darkgray;
+  }
+}
+
+.pricingCard {
+  &:hover {
+    border-color: $blue;
+    cursor: pointer;
+    
+    .pricingCard_header {
+      background-color: $blue;   
+      color: white;
+    }
+  }
+
+  &_header {
+    background-color: $lightgray;
+
+    &.isChosenPlan {
+      background-color: $blue;
+      color: white;
+    }
+  }
+
+  &_button {
+    background-color: white;
+      color: $blue;
+
+    &.isPaid {
+      color: white;
+      background-color: $blue;
+    }
+  }
+}
+
+.darkMode {
+  p {
+    color: $lightgray;
+  }
+
+  .pricingCard {
+    &_header {
+      background-color: gray;
+    }
+
+    &_button {
+      color: white;
+
+       &.isPaid {
+        background-color: transparent;
+        color: $blue;
+      }
+    }
+  }
+}
+
 
 </style>

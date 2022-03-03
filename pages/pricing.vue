@@ -7,7 +7,7 @@
     </b-row>
     <b-row class="justify-content-center">
       <b-col md="8">
-        <p>
+        <p class='pricing-description'>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
           tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
           officiis doloremque autem illum reiciendis libero dignissimos
@@ -18,20 +18,23 @@
 
     <b-row>
       <div class='pricingCards'>
-        <PricingCard title='Free' price=0 :description="['10 users included', '2 GB of storage', 'Email support', 'Help center access']" ctaText='Sign up for free' isFree />
-        <PricingCard title='Pro'  price=15 :description="['20 users included', '10 GB of storage', 'Priority email support', 'Help center access']" ctaText='Get started'/>
-        <PricingCard title='Enterprise'  price=29 :description="['30 users included', '15 GB of storage', 'Phone and email support', 'Help center access']" ctaText='Contact'/>
+        <PricingCard v-for="item in getPricingOptions" :key="item" :title="item.name" :price="item.cost" :description="item.features" :ctaText="item.cta" :isPaid="item.paid === true"/>
+        
       </div>
-      
     </b-row>
   </b-container>
 </template>
 
 <script>
+import store from '../store';
+
 export default {
   name: 'Pricing',
   layout: 'default',
-  computed: {},
+  store,
+  computed:{
+    getPricingOptions(){ return this.$store.getters.pricingOptions }
+  }
 };
 </script>
 
@@ -39,7 +42,6 @@ export default {
 @import 'global';
 
 p {
-  color: $darkgray;
   font-size: 1.25rem;
 }
 
@@ -47,10 +49,10 @@ p {
   display: block;
   width: 100%;
   justify-content: center;
+  margin-top: 20px;
 
   @media (min-width: $breakpoint-desktop) {
     display: flex;
-    
   }
 }
 

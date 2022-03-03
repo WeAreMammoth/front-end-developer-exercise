@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import PricingCard from '../components/PricingCard.vue'
 
 export default {
   name: 'Default',
