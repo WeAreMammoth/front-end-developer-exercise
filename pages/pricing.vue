@@ -15,20 +15,28 @@
         </p>
       </b-col>
     </b-row>
+    <PricingCard
+      
+     />
   </b-container>
 </template>
 
 <script>
 export default {
-  name: 'Pricing',
-  layout: 'default',
-  computed: {},
+  name: "Pricing",
+  layout: "default",
+  computed: {
+      pricingOptions() {
+        return this.$store.getters.pricingOptions;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 p {
-  color: #6c757d;
+  color: var(--offgrey);
   font-size: 1.25rem;
 }
+
 </style>

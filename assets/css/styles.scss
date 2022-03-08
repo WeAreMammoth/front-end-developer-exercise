@@ -1,0 +1,25 @@
+@import 'theme-colors';
+
+/*
+* === BODY, APP BACKGROUND ETC. ===
+*/
+
+.app-background {
+  background-color: var(--app-background-color);
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    color: var(--main-color);
+}
+p {
+    font-weight: 500;;
+}
+
+.dynamic-title {
+  color: var(--dynamic-title-color);
+}
+
+.dynamic-subtitle {
+  color: var(--dynamic-subtitle-color);
+  padding-top: 10px;
+}
