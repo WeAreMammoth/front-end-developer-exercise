@@ -34,11 +34,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 p {
-  color: #6c757d;
+  color: var(--offgrey);
   font-size: 1.25rem;
 }
-
 
 </style>

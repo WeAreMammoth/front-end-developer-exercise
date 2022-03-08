@@ -6,6 +6,7 @@
       class="plan"
       :class="[option.name]"
       @click="name = option.name"
+      :aria-label="[option.name]"
     >
       <div class="plan-name">
         <h2>{{ option.name }}</h2>
@@ -60,11 +61,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border: 1px solid rgba(0, 0, 0, 0.125);
-$blueborder: 1px solid rgba(0, 123, 225, 1);
-$black: rgba(200, 200, 200, 0.125);
-$blue: rgba(0, 123, 225, 1);
-$lightgrey: rgba(250, 250, 250, 1);
+// $border: 1px solid rgba(0, 0, 0, 0.125);
+// $blueborder: 1px solid rgba(0, 123, 225, 1);
+// $black: rgba(200, 200, 200, 0.125);
+// $blue: rgba(0, 123, 225, 1);
+// $lightgrey: rgba(250, 250, 250, 1);
 
 .pricing-plan {
   display: flex;
@@ -76,17 +77,18 @@ $lightgrey: rgba(250, 250, 250, 1);
     align-items: center;
   }
 }
-.pricing-container {
+.plan-container {
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
 .plan {
-  background: $lightgrey;
+  $self: &;
+  background: var(--lightgrey);
   display: flex;
   flex: 1;
   flex-direction: column;
-  border: $border;
+  border: var(--border);
   border-radius: 0.5rem;
   overflow: hidden;
 
@@ -99,23 +101,25 @@ $lightgrey: rgba(250, 250, 250, 1);
   }
 
   &.Enterprise {
-    background: $blue;
-    border: $blueborder;
+    background: var(--darkblue);
+    border: var(--blueborder);
     .plan-name {
-      background: $blue;
-      border: $blueborder;
-      color: white;
+      background: var(--lightblue);
+      border: var(--blueborder);
+      h2 {
+      color: var(--white);
+      }
     }
   }
 
-  .plan-name {
-    background: $black;
-    border-bottom: $border;
+  &-name {
+    background: var(--offblack);
+    border-bottom: var(--border);
     padding: 0.4em 0;
     width: 100%;
   }
-  .plan-body {
-    background: white;
+  &-body {
+    background: var(--mainwhite);
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -123,41 +127,42 @@ $lightgrey: rgba(250, 250, 250, 1);
     gap: 0.4em;
     padding: 0.4em 0;
 
-    .plan-cost {
-      color: #000;
+    #{ $self }-cost {
+      color: var(--black);
       font-size: 1.8em;
       font-weight: 600;
       margin-block-end: unset;
     }
-    .plan-list {
+    #{ $self }-list {
       font-weight: 600;
       padding-inline-start: 0;
       margin-block-end: 0;
     }
-    .plan-feature {
+    #{ $self }-feature {
+      color: var(--black);
       list-style-type: none;
     }
     button {
-      color: #fff;
+      color: var(--white);
       font-size: 1em;
       font-weight: 600;
-      background-color: #007bff;
-      border-color: #007bff;
+      background-color: var(--lightblue);
+      border-color: var(--lightblue);
       border-radius: 4px;
       border-style: none;
       padding: 0.4em 0.8em;
       margin-top: 0.6em;
       margin-bottom: 1em;
       &:hover {
-        background-color: #0063ce;
-        border-color: #0063ce;
+        background-color: var(--darkblue);
+        border-color: var(--darkblue);
       }
       &.unpaid {
-        color: $blue;
-        background-color: white;
-        border: $blueborder;
+        color: var(--lightblue);
+        background-color: var(--mainwhite);
+        border: var(--blueborder);
         &:hover {
-          background-color: $lightgrey;
+          background-color: var(--lightbtn);
         }
       }
     }
