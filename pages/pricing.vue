@@ -15,14 +15,69 @@
         </p>
       </b-col>
     </b-row>
+    <b-row class="justify-content-center mt-4">
+      <b-col md="7" lg="4" v-for="pricing in pricingOptions" :key="pricing.name">
+        <PricingCard :pricing="pricing"/>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
 <script>
+import PricingCard from '../components/PricingCard.vue'
+
 export default {
   name: 'Pricing',
   layout: 'default',
   computed: {},
+  components: {
+    PricingCard
+  },
+  data() {
+    return {
+      pricingOptions: []
+    }
+  },
+  created() {
+    this.pricingOptions = [
+      {
+        name: 'Free',
+        cost: 0,
+        features: [
+          '10 users included',
+          '2 GB of storage',
+          'Email support',
+          'Help center access',
+        ],
+        cta: 'Sign up for free',
+        paid: false,
+      },
+      {
+        name: 'Pro',
+        cost: 15,
+        features: [
+          '20 users included',
+          '10 GB of storage',
+          'Priority email support',
+          'Help center access',
+        ],
+        cta: 'Get started',
+        paid: true,
+      },
+      {
+        name: 'Enterprise',
+        cost: 29,
+        features: [
+          '30 users included',
+          '15 GB of storage',
+          'Phone and email support',
+          'Help center access',
+        ],
+        cta: 'Contact us',
+        paid: true,
+      },
+    ]
+  }
 };
 </script>
 
