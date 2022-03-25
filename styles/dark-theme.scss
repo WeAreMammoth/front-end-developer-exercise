@@ -1,0 +1,10 @@
+@import "./colors.scss";
+
+.dark_theme {
+  background-color: lighten($black, 10) !important;
+  color: darken($white, 20);
+}
+
+// I imported this file into the App.js file within the nuxt folder.
+// Since I am not familiar with Vue, I didn't know where to import it.
+// I have noticed that every time i run the project, it gets deleted.
