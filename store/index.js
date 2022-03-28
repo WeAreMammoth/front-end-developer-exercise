@@ -1,3 +1,8 @@
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
 export const state = {
   pricingOptions: [
     {
@@ -43,7 +48,12 @@ export const state = {
 export const getters = {
   pricingOptions(state) {
     return state.pricingOptions;
+
   },
 };
 
-export const mutations = {};
+export const mutations = {
+  chosenOption(state, chosen) {
+    state.chosenPlan = chosen;
+  }
+};

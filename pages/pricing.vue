@@ -6,12 +6,14 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-center">
-      <b-col md="8">
+      <b-col>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
           tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
           officiis doloremque autem illum reiciendis libero dignissimos
           repellendus dolores veniam error odit!
+
+          <PricingCard></PricingCard>
         </p>
       </b-col>
     </b-row>
@@ -19,10 +21,13 @@
 </template>
 
 <script>
+
+  import { PricingCard} from '../components/PricingCard';
 export default {
   name: 'Pricing',
   layout: 'default',
-  computed: {},
+    computed: {},
+  components:PricingCard,
 };
 </script>
 
