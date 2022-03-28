@@ -3,9 +3,8 @@
 
   <b-container>
     <b-row>
-
-        <b-card-group
-                      class="col"
+     
+        <b-card-group class="col"
                       deck
                       v-for="(n, index) in itemsToDisplay"
                       :key="index"
@@ -22,17 +21,17 @@
               <li v-for="(nx, index) in n.features" :key="index">{{ nx }}</li>
 
             </b-card-text>
-            <b-button data-target="modal-1" v-b-modal.modal-1 :data-option="n.name" data-plan="n.name" variant="primary" @click="getSelectedPlan()">{{ n.cta }} </b-button>
+            <b-button class="button" data-target="modal-1" v-b-modal.modal-1 :data-option="n.name" data-plan="n.name" variant="primary" @click="getSelectedPlan()">{{ n.cta }} </b-button>
           </b-card>
 
           <!--<b-card border-variant="primary"
-                  header="Primary"
-                  header-bg-variant="primary"
-                  header-text-variant="white"
-                  class="text-center">
-            <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
-            <b-button href="#" variant="primary">Go somewhere</b-button>
-          </b-card>-->
+            header="Primary"
+            header-bg-variant="primary"
+            header-text-variant="white"
+            class="text-center">
+      <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+      <b-button href="#" variant="primary">Go somewhere</b-button>
+    </b-card>-->
         </b-card-group>
 
       <PriceModal :selectedPlanName="selectedPlan" />
@@ -55,6 +54,9 @@ export default {
       };
     },
 
+    mounted() {
+      
+    },
 
     computed: {
       itemsToDisplay() {
@@ -82,4 +84,36 @@ export default {
   li {
     list-style-type: none;
   }
+
+  .card {
+    color: black;
+  }
+
+  .card-deck {
+    background-color: none;
+  }
+
+  .card-deck[data-plan-name="Free"] {
+    .button {
+      border-color: #007BFF;
+      background: none;
+      color: #007BFF;
+    }
+  }
+
+  .card-deck[data-plan-name="Pro"] {
+
+  }
+
+  .card-deck[data-plan-name="Enterprise"] {
+    .card {
+      border-color: #007bff;
+    }
+
+    .card-header {
+      background-color: #007bff;
+      color: white;
+    }
+  }
+
 </style>

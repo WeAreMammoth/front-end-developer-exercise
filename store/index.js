@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import 'assets/main.css'
 
 Vue.use(Vuex)
 
@@ -57,3 +58,4 @@ export const mutations = {
     state.chosenPlan = chosen;
   }
 };
+

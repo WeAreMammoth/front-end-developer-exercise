@@ -13,7 +13,7 @@
           officiis doloremque autem illum reiciendis libero dignissimos
           repellendus dolores veniam error odit!
 
-          <PricingCard></PricingCard>
+          <PricingCard style="padding-top:5rem;"></PricingCard>
         </p>
       </b-col>
     </b-row>
