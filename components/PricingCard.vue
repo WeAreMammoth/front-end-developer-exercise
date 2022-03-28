@@ -22,7 +22,7 @@
               <li v-for="(nx, index) in n.features" :key="index">{{ nx }}</li>
 
             </b-card-text>
-            <b-button data-target="modal-1" :data-option="n.name" data-plan="n.name" variant="primary" @click="getSelectedPlan()">{{ n.cta }} </b-button>
+            <b-button data-target="modal-1" v-b-modal.modal-1 :data-option="n.name" data-plan="n.name" variant="primary" @click="getSelectedPlan()">{{ n.cta }} </b-button>
           </b-card>
 
           <!--<b-card border-variant="primary"
