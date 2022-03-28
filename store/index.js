@@ -46,4 +46,8 @@ export const getters = {
   },
 };
 
-export const mutations = {};
+export const mutations = {
+  changePlan(state, plan) {
+    state.chosenPlan = plan;
+  }
+};
