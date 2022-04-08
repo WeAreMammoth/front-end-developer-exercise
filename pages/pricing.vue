@@ -48,8 +48,14 @@ export default {
 
 <style lang="scss" scoped>
   .subtitle {
-    color: #6c757d;
-      font-size: 1.15rem;
+    color: $secondary;
+    font-size: 1.15rem;
+  }
+
+  [data-theme="dark"] {
+    p {
+      color: $light;
+    }
   }
 
   @include media-breakpoint-up(sm) {

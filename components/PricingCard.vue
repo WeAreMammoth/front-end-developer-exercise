@@ -33,3 +33,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  [data-theme="dark"] {
+    .card {
+      background-color: $dark;
+    }
+  }
+</style>
