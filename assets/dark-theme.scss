@@ -1,0 +1,17 @@
+[data-theme="dark"] {
+  body {
+    background-color: #111;
+    color: #fff;
+  }
+
+  .modal-content {
+    background-color: $dark;
+    .modal-header,
+    .modal-footer {
+      border-color: $secondary;
+    }
+    .close {
+      color: $light;
+    }
+  }
+}
