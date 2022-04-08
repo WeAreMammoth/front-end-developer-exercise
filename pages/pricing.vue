@@ -6,8 +6,8 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-center">
-      <b-col md="8">
-        <p>
+      <b-col md="10" lg="8">
+        <p class="subtitle">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
           tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
           officiis doloremque autem illum reiciendis libero dignissimos
@@ -15,20 +15,46 @@
         </p>
       </b-col>
     </b-row>
+
+    <b-row class="justify-content-center">
+      <b-col class="mt-5" sm="10" lg="4" v-for="(option, index) in pricingOptions" :key="option.name">
+        <PricingCard :planInfo=option />
+      </b-col>
+    </b-row>
+
+    <b-modal id="chosenPlan" title="New Plan Selected">
+      <p>You have chosen: <strong>{{chosenPlanName}}</strong></p>
+    </b-modal>
+
   </b-container>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import PricingCard from '../components/PricingCard.vue'
+
 export default {
   name: 'Pricing',
   layout: 'default',
-  computed: {},
+  components: { PricingCard },
+  computed: {
+    ...mapGetters([
+      'pricingOptions',
+      'chosenPlanName'
+    ])
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-p {
-  color: #6c757d;
-  font-size: 1.25rem;
-}
+  .subtitle {
+    color: #6c757d;
+      font-size: 1.15rem;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .subtitle {
+      font-size: 1.25rem;
+    }
+  }
 </style>
