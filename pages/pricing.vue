@@ -15,11 +15,38 @@
         </p>
       </b-col>
     </b-row>
+    <b-row class="justify-content-center">
+      <b-col lg="4">
+        <PricingCard 
+          :buttonLabel="'Sign up for free'"
+          :buttonStyle="'secondary'"
+          :price="0"
+          :title="'Free'"
+        />
+      </b-col>
+      <b-col lg="4">
+        <PricingCard
+          :buttonLabel="'Get Started'"
+          :price="15"
+          :title="'Pro'"
+        />
+      </b-col>
+      <b-col lg="4">
+        <PricingCard 
+          :buttonLabel="'Contact Us'"
+          :highlightCard="true"
+          :price="29"
+          :title="'Enterprise'"
+        />
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
 <script>
+import PricingCard from '../components/PricingCard.vue';
 export default {
+  components: { PricingCard },
   name: 'Pricing',
   layout: 'default',
   computed: {},
@@ -28,7 +55,7 @@ export default {
 
 <style lang="scss" scoped>
 p {
-  color: #6c757d;
+  color: $color__gray;
   font-size: 1.25rem;
 }
 </style>
