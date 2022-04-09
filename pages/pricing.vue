@@ -16,27 +16,14 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-center">
-      <b-col lg="4">
+      <b-col lg="4" v-for="(option, index) in pricingOptions" v-bind:key="index">
         <PricingCard 
-          :buttonLabel="'Sign up for free'"
-          :buttonStyle="'secondary'"
-          :price="0"
-          :title="'Free'"
-        />
-      </b-col>
-      <b-col lg="4">
-        <PricingCard
-          :buttonLabel="'Get Started'"
-          :price="15"
-          :title="'Pro'"
-        />
-      </b-col>
-      <b-col lg="4">
-        <PricingCard 
-          :buttonLabel="'Contact Us'"
-          :highlightCard="true"
-          :price="29"
-          :title="'Enterprise'"
+          :buttonLabel="option.cta"
+          :buttonVariant="option.paid ? 'primary' : 'outline-primary'"
+          :features="option.features"
+          :cost="option.cost"
+          :title="option.name"
+          :featured="option.featured"
         />
       </b-col>
     </b-row>
@@ -49,7 +36,11 @@ export default {
   components: { PricingCard },
   name: 'Pricing',
   layout: 'default',
-  computed: {},
+  computed: {
+    pricingOptions() {
+      return this.$store.getters.pricingOptions;
+    },
+  },
 };
 </script>
 

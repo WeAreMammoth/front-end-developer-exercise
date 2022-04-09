@@ -1,14 +1,20 @@
 <template>
-  <div :class="cardClasses">
-    <h3 class="pricing-card__heading">{{ title }}</h3>
-    <div class="pricing-card__body">
-      <h2>${{ price }}/mo</h2>
-      <p>feature one</p>
-      <p>feature two</p>
-      <p>feature three</p>
-      <CTAButton :label="buttonLabel" :buttonStyle="buttonStyle"/>
-    </div>
-  </div>
+  <b-card
+    :border-variant="cardBorderVariant"
+    :header="title"
+    :header-bg-variant="cardHeaderBGVariant"
+    :title="`$${cost}/mo`"
+    title-tag="h2"
+  >
+    <b-card-body>
+      <ul class="pricing-card__features">
+        <li v-for="(feature, index) in features" v-bind:key="index">
+          {{ feature }}
+        </li>
+      </ul>
+    </b-card-body>
+    <b-button :variant="buttonVariant">{{ buttonLabel }}</b-button>
+  </b-card>
 </template>
 
 <script>
@@ -21,15 +27,19 @@ export default {
       default: 'Click Here',
       type: String,
     },
-    buttonStyle: {
+    buttonVariant: {
       default: 'primary',
       type: String,
     },
-    highlightCard: {
+    features: {
+      defualt: [],
+      type: Array,
+    },
+    featured: {
       default: false,
       type: Boolean,
     },
-    price: {
+    cost: {
       default: 0,
       type: Number,
     },
@@ -37,16 +47,17 @@ export default {
       default: 'Card Title',
       type: String,
     },
+    cardVariant: {
+      default: '',
+      type: String
+    },
   },
   computed: {
-    cardClasses() {
-      let classes = 'pricing-card';
-
-      if (this.highlightCard) {
-        classes += ' pricing-card--highlighted'
-      }
-
-      return classes;
+    cardBorderVariant() {
+      return this.featured ? 'primary' : '';
+    },
+    cardHeaderBGVariant() {
+      return this.featured ? 'primary' : '';
     }
   },
   methods: {},
@@ -54,21 +65,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pricing-card {
-  border: $border__default;
-  border-radius: 3px;
-
-  &--highlighted {
-    border-color: $color__blue;
-  }
-
-  &__body {
-    padding: 1rem;
-  }
-
-  &__heading {
-    border-bottom: $border__default;
-  }
+.pricing-card__features {
+  list-style: none;
+  padding-left: 0;
 }
 
 .pricing-card--highlighted {
