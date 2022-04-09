@@ -46,6 +46,7 @@ export default {
     scss: [
       "~/node_modules/bootstrap/scss/bootstrap.scss",
       "~/node_modules/bootstrap-vue/src/index.scss",
+      "~/assets/scss/index.scss",
     ],
   },
 
