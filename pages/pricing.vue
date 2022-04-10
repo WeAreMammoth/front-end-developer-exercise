@@ -5,8 +5,8 @@
         <h1>Pricing</h1>
       </b-col>
     </b-row>
-    <b-row class="justify-content-center">
-      <b-col md="8" class="mb-4">
+    <b-row class="justify-content-center mb-4">
+      <b-col md="8">
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
           tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
@@ -15,7 +15,7 @@
         </p>
       </b-col>
     </b-row>
-    <b-row class="justify-content-center">
+    <b-row class="justify-content-center mb-4">
       <b-col lg="4" v-for="(option, index) in pricingOptions" v-bind:key="index">
         <PricingCard 
           :buttonLabel="option.cta"

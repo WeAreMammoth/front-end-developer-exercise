@@ -6,7 +6,7 @@
     :header-text-variant="cardHeaderTextVariant"
     :title="`$${cost}/mo`"
     title-tag="h3"
-    class="pricing-card"
+    class="pricing-card mb-4"
   >
     <template #header>
       <h3 class="mb-0">{{ title }}</h3>
