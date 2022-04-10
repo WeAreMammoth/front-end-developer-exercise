@@ -1,7 +1,11 @@
 <template>
   <b-container class="text-center">
-    <b-modal ref="confirmation-modal"> 
-      <p>current plan: {{ chosenPlan }}</p>
+    <b-modal
+      ref="confirmation-modal"
+      title="New Plan Selected"
+      title-class="font-weight-bold"
+    > 
+      <p>You have chosen: <span class="font-weight-bold">{{ chosenPlan }}</span></p>
     </b-modal>
     <b-row>
       <b-col class="mt-5">
