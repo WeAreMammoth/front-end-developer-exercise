@@ -10,7 +10,7 @@
     </b-row>
     <b-row class="justify-content-center mb-4">
       <b-col md="8">
-        <p>
+        <p class="intro-copy">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
           tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
           officiis doloremque autem illum reiciendis libero dignissimos
@@ -61,8 +61,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-p {
+<style lang="scss">
+.intro-copy {
   color: $color__gray;
   font-size: 1.25rem;
 }
