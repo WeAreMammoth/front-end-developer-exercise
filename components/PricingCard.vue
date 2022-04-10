@@ -1,11 +1,16 @@
 <template>
   <b-card
     :border-variant="cardBorderVariant"
-    :header="title"
+    :header-tag="header"
     :header-bg-variant="cardHeaderBGVariant"
+    :header-text-variant="cardHeaderTextVariant"
     :title="`$${cost}/mo`"
-    title-tag="h2"
+    title-tag="h3"
+    class="pricing-card"
   >
+    <template #header>
+      <h3 class="mb-0">{{ title }}</h3>
+    </template>
     <b-card-body>
       <ul class="pricing-card__features">
         <li v-for="(feature, index) in features" v-bind:key="index">
@@ -58,6 +63,9 @@ export default {
     },
     cardHeaderBGVariant() {
       return this.featured ? 'primary' : '';
+    },
+    cardHeaderTextVariant() {
+      return this.featured ? 'white' : '';
     }
   },
   methods: {},
@@ -68,15 +76,5 @@ export default {
 .pricing-card__features {
   list-style: none;
   padding-left: 0;
-}
-
-.pricing-card--highlighted {
-  border-color: $color__blue;
-
-  .pricing-card__heading {
-    color: $color__white;
-    background-color: $color__blue;
-    border-color: $color__blue;
-  }
 }
 </style>

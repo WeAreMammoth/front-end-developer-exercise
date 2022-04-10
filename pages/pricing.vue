@@ -6,7 +6,7 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-center">
-      <b-col md="8">
+      <b-col md="8" class="mb-4">
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
           tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
