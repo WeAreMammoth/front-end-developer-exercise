@@ -27,7 +27,7 @@ export default {
   }
 
   // Bootstrap uses 768px as the min-width for --breakpoint-md,
-  // so start 1 below that for this text size reset
+  // so start 1px below that for this text size reset
   @media screen and (max-width: 767px) {
     .site-heading {
       font-size: 2rem;

@@ -23,10 +23,14 @@
       </b-col>
     </b-row>
     <b-row class="justify-content-center mb-4">
-      <b-col lg="4" v-for="(option, index) in pricingOptions" v-bind:key="index">
+      <b-col 
+        lg="4" 
+        v-for="(option, index) in pricingOptions" 
+        :key="index"
+      >
         <PricingCard 
           :buttonLabel="option.cta"
-          :buttonVariant="option.paid ? 'primary' : 'outline-primary'"
+          :buttonVariant="getButtonVariant(option.paid)"
           :features="option.features"
           :cost="option.cost"
           :title="option.name"
@@ -50,7 +54,7 @@ export default {
     },
     chosenPlan() {
       return this.$store.state.chosenPlan;
-    }
+    },
   },
   watch: {
     chosenPlan() {
@@ -61,6 +65,9 @@ export default {
     setChosenPlan(planName) {
       this.$store.commit('setChosenPlan', { chosenPlan: planName });
     },
+    getButtonVariant(isPaidOption) {
+      return isPaidOption ? 'primary' : 'outline-primary';
+    }
   },
 };
 </script>
