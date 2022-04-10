@@ -21,4 +21,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  [aria-current] {
+    font-weight: bold;
+  }
+</style>
