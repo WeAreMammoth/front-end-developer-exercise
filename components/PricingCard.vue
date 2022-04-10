@@ -18,7 +18,12 @@
         </li>
       </ul>
     </b-card-body>
-    <b-button :variant="buttonVariant">{{ buttonLabel }}</b-button>
+    <b-button 
+      :variant="buttonVariant"
+      @click="handleButtonClick"
+    >
+      {{ buttonLabel }}
+    </b-button>
   </b-card>
 </template>
 
@@ -54,8 +59,12 @@ export default {
     },
     cardVariant: {
       default: '',
-      type: String
+      type: String,
     },
+    onButtonClick: {
+      default: () => {},
+      type: Function,
+    }
   },
   computed: {
     cardBorderVariant() {
@@ -68,7 +77,11 @@ export default {
       return this.featured ? 'white' : '';
     }
   },
-  methods: {},
+  methods: {
+    handleButtonClick() {
+      this.onButtonClick(this.title);
+    }
+  },
 };
 </script>
 

@@ -1,5 +1,8 @@
 <template>
   <b-container class="text-center">
+    <b-modal ref="confirmation-modal"> 
+      <p>current plan: {{ chosenPlan }}</p>
+    </b-modal>
     <b-row>
       <b-col class="mt-5">
         <h1>Pricing</h1>
@@ -24,6 +27,7 @@
           :cost="option.cost"
           :title="option.name"
           :featured="option.featured"
+          :onButtonClick="setChosenPlan"
         />
       </b-col>
     </b-row>
@@ -39,6 +43,19 @@ export default {
   computed: {
     pricingOptions() {
       return this.$store.getters.pricingOptions;
+    },
+    chosenPlan() {
+      return this.$store.state.chosenPlan;
+    }
+  },
+  watch: {
+    chosenPlan() {
+      this.$refs['confirmation-modal'].show();
+    }
+  },
+  methods: {
+    setChosenPlan(planName) {
+      this.$store.commit('setChosenPlan', { chosenPlan: planName });
     },
   },
 };
