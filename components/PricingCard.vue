@@ -28,10 +28,8 @@
 </template>
 
 <script>
-import CTAButton from './CTAButton.vue';
 export default {
   name: 'PricingCard',
-  components: { CTAButton },
   props: {
     buttonLabel: {
       default: 'Click Here',
