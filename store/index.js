@@ -11,7 +11,6 @@ export const state = {
       ],
       cta: 'Sign up for free',
       paid: false,
-      featured: false,
     },
     {
       name: 'Pro',
@@ -24,7 +23,6 @@ export const state = {
       ],
       cta: 'Get started',
       paid: true,
-      featured: false,
     },
     {
       name: 'Enterprise',
@@ -37,7 +35,6 @@ export const state = {
       ],
       cta: 'Contact us',
       paid: true,
-      featured: true,
     },
   ],
   chosenPlan: null,

@@ -34,7 +34,7 @@
           :features="option.features"
           :cost="option.cost"
           :title="option.name"
-          :featured="option.featured"
+          :isSelected="isOptionSelected(option.name)"
           :onButtonClick="setChosenPlan"
         />
       </b-col>
@@ -67,6 +67,9 @@ export default {
     },
     getButtonVariant(isPaidOption) {
       return isPaidOption ? 'primary' : 'outline-primary';
+    },
+    isOptionSelected(optionName) {
+      return optionName === this.$store.state.chosenPlan
     }
   },
 };

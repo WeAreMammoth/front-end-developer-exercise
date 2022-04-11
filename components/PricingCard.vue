@@ -44,7 +44,7 @@ export default {
       defualt: [],
       type: Array,
     },
-    featured: {
+    isSelected: {
       default: false,
       type: Boolean,
     },
@@ -63,13 +63,13 @@ export default {
   },
   computed: {
     cardBorderVariant() {
-      return this.featured ? 'primary' : '';
+      return this.isSelected ? 'primary' : '';
     },
     cardHeaderBGVariant() {
-      return this.featured ? 'primary' : '';
+      return this.isSelected ? 'primary' : '';
     },
     cardHeaderTextVariant() {
-      return this.featured ? 'white' : '';
+      return this.isSelected ? 'white' : '';
     }
   },
   methods: {
