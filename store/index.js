@@ -44,6 +44,18 @@ export const getters = {
   pricingOptions(state) {
     return state.pricingOptions;
   },
+  userSelectedPlan(state){
+    return state.chosenPlan;
+  },
 };
 
-export const mutations = {};
+export const mutations = {
+  CHOOSE_PRICING_PLAN(state, payload){
+    state.chosenPlan = payload;
+  }
+};
+export const actions = {
+  choosePricingPlan({commit}, payload){
+    commit('CHOOSE_PRICING_PLAN', payload);
+  }
+};

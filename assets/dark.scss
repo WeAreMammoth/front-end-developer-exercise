@@ -1,0 +1,26 @@
+$color-dark: #010101;
+$color-light: #f1f1f1;
+
+body{
+	background-color: $color-light;
+	color:$color-dark;
+}
+body.dark{
+	background-color: $color-dark;
+	color:$color-dark;
+    .site-title {
+        color: $color-light;
+    }
+    .site-title-dark {
+        color:$color-dark;
+    }
+    .button-switch{
+        color: $color-light;
+    }
+    .paragraph{
+        color: $color-light;
+    }
+    .site-title{
+        color: $color-light;    
+    }
+}
