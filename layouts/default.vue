@@ -21,4 +21,59 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+
+<style lang="scss" scoped>
+
+a.nuxt-link-exact-active {
+
+  font-weight: bold;
+}
+
+@media screen and (min-width: 100px) {
+
+h1 {
+
+font-size: 15px;
+}
+a{
+  font-size: 10px;
+}
+a.nuxt-link-exact-active {
+
+  font-weight: bold;
+}
+}
+
+
+@media screen and (min-width: 400px) {
+
+h1 {
+
+font-size: 22px;
+}
+a{
+  font-size: 15px;
+}
+a.nuxt-link-exact-active {
+
+ font-weight: bold;
+}
+}
+
+@media screen and (min-width: 800px) {
+
+h1 {
+
+font-size: 30px;
+}
+a{
+  font-size: 20px;
+}
+a.nuxt-link-exact-active {
+
+  font-weight: bold;
+}
+}
+
+
+</style>
