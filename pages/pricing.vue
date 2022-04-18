@@ -1,3 +1,4 @@
+
 <template>
   <b-container class="text-center">
     <b-row>
@@ -15,14 +16,20 @@
         </p>
       </b-col>
     </b-row>
+    <pricing-card></pricing-card>
   </b-container>
+
 </template>
 
 <script>
+import PricingCard from "../components/PricingCard.vue"
 export default {
   name: 'Pricing',
   layout: 'default',
   computed: {},
+  components: {
+    PricingCard
+  }
 };
 </script>
 
