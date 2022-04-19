@@ -1,21 +1,47 @@
 <template>
-  <b-container class="text-center">
-    <b-row>
-      <b-col class="mt-5">
-        <h1>Pricing</h1>
-      </b-col>
-    </b-row>
-    <b-row class="justify-content-center">
-      <b-col md="8">
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
-          tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
-          officiis doloremque autem illum reiciendis libero dignissimos
-          repellendus dolores veniam error odit!
-        </p>
-      </b-col>
-    </b-row>
-  </b-container>
+  <div>
+    <b-container class="text-center">
+      <b-row>
+        <b-col class="mt-5">
+          <h1>Pricing</h1>
+        </b-col>
+      </b-row>
+      <b-row class="justify-content-center">
+        <b-col md="8">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
+            tenetur. Eius, fugit quidem tempore, quia officia impedit possimus
+            officiis doloremque autem illum reiciendis libero dignissimos
+            repellendus dolores veniam error odit!
+          </p>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col
+          lg="4"
+          v-for="{
+            name,
+            cost,
+            features,
+            cta,
+            paid,
+            featured,
+          } in pricingOptions"
+          :key="name"
+        >
+          <PricingCard
+            :name="name"
+            :cost="cost"
+            :features="features"
+            :cta="cta"
+            :paid="paid"
+            :featured="featured"
+            @select="selectPlan(name)"
+          />
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <script>
