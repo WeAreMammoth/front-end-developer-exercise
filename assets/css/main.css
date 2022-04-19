@@ -1,0 +1,46 @@
+.pricingCard {
+  width: 100%;
+  margin: 2rem auto;
+  max-width: 360px;
+  overflow: hidden;
+  height: auto;
+  color: #212529;
+}
+
+.pricingCard__container {
+  background: white;
+  border: solid #ddd 1px;
+  border-radius: 4px;
+}
+
+.pricingCard--featured .pricingCard__container,
+.pricingCard--featured .pricingCard__name {
+  border-color: #007bff;
+}
+
+.pricingCard__content {
+  padding: 0.75rem 0.75rem 1.25rem;
+}
+
+.pricingCard__name {
+  background: #eaeaea;
+  margin: 0;
+  padding: 0.75rem;
+  border-bottom: solid #ddd 1px;
+}
+
+.pricingCard--featured .pricingCard__name {
+  background: #007bff;
+  color: white;
+}
+
+.pricingCard__cost {
+  font-weight: bold;
+  font-size: 1.65rem;
+}
+
+.pricingCard__features-list {
+  margin: 0.75rem 0 1.25rem;
+  padding: 0;
+  list-style-type: none;
+}
