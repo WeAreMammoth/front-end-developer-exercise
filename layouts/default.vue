@@ -17,8 +17,14 @@
 
 <script>
 export default {
-  name: 'Default',
+  name: "Default",
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+@media (max-width: 991px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+</style>
