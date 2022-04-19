@@ -1,24 +1,71 @@
 <template>
-  <b-container>
-    <b-row class="my-5">
+  <div>
+    <b-container>
+      <b-row class="my-5">
+        <b-col>
+          <h1>Company Inc.</h1>
+          <NuxtLink to="/">Home</NuxtLink>
+          <NuxtLink to="pricing">Pricing</NuxtLink>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col>
+          <Nuxt />
+        </b-col>
+      </b-row>
       <b-col>
-        <h1>Company Inc.</h1>
-        <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="pricing">Pricing</NuxtLink>
+        <b-row>
+          <ThemeSelector />
+        </b-row>
       </b-col>
-    </b-row>
-    <b-row>
-      <b-col>
-        <Nuxt />
-      </b-col>
-    </b-row>
-  </b-container>
+    </b-container>
+    <b-modal
+      :visible="modalShow"
+      title="New Plan Selected"
+      @hide="clearSelectedPlan"
+    >
+      You have chosen: <b>{{ chosenPlan }}</b>
+    </b-modal>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Default',
+  name: "Default",
+  computed: {
+    pricingOptions() {
+      return this.$store.state.pricingOptions;
+    },
+    modalShow() {
+      return !!this.$store.state.chosenPlan;
+    },
+    chosenPlan() {
+      return this.$store.state.chosenPlan;
+    },
+  },
+  methods: {
+    clearSelectedPlan() {
+      this.$store.commit("choosePlan", null);
+    },
+  },
+  head() {
+    return {
+      htmlAttrs: {
+        class: `theme-${this.$store.state.theme}`,
+      },
+    };
+  },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+a.nuxt-link-exact-active {
+  font-weight: bold;
+}
+
+@media (max-width: 991px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+}
+</style>

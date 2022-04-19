@@ -1,43 +1,47 @@
 export const state = {
   pricingOptions: [
     {
-      name: 'Free',
+      name: "Free",
       cost: 0,
       features: [
-        '10 users included',
-        '2 GB of storage',
-        'Email support',
-        'Help center access',
+        "10 users included",
+        "2 GB of storage",
+        "Email support",
+        "Help center access",
       ],
-      cta: 'Sign up for free',
+      cta: "Sign up for free",
       paid: false,
+      featured: false,
     },
     {
-      name: 'Pro',
+      name: "Pro",
       cost: 15,
       features: [
-        '20 users included',
-        '10 GB of storage',
-        'Priority email support',
-        'Help center access',
+        "20 users included",
+        "10 GB of storage",
+        "Priority email support",
+        "Help center access",
       ],
-      cta: 'Get started',
+      cta: "Get started",
       paid: true,
+      featured: false,
     },
     {
-      name: 'Enterprise',
+      name: "Enterprise",
       cost: 29,
       features: [
-        '30 users included',
-        '15 GB of storage',
-        'Phone and email support',
-        'Help center access',
+        "30 users included",
+        "15 GB of storage",
+        "Phone and email support",
+        "Help center access",
       ],
-      cta: 'Contact us',
+      cta: "Contact us",
       paid: true,
+      featured: true,
     },
   ],
   chosenPlan: null,
+  theme: "light",
 };
 
 export const getters = {
@@ -46,4 +50,11 @@ export const getters = {
   },
 };
 
-export const mutations = {};
+export const mutations = {
+  choosePlan: (state, payload) => {
+    state.chosenPlan = payload;
+  },
+  setTheme: (state, payload) => {
+    state.theme = payload;
+  },
+};
