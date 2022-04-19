@@ -65,7 +65,7 @@ a.nuxt-link-exact-active {
 
 @media (max-width: 991px) {
   h1 {
-    font-size: 1.75rem;
+    font-size: 1.3rem;
   }
 }
 </style>
