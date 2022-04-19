@@ -20,9 +20,18 @@
 
 <script>
 export default {
-  name: 'Pricing',
-  layout: 'default',
-  computed: {},
+  name: "Pricing",
+  layout: "default",
+  computed: {
+    pricingOptions() {
+      return this.$store.state.pricingOptions;
+    },
+  },
+  methods: {
+    selectPlan(name) {
+      this.$store.commit("choosePlan", name);
+    },
+  },
 };
 </script>
 
