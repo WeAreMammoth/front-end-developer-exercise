@@ -22,6 +22,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+a.nuxt-link-exact-active {
+  font-weight: bold;
+}
+
 @media (max-width: 991px) {
   h1 {
     font-size: 1.75rem;
