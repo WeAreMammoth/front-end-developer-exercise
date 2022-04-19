@@ -1,3 +1,13 @@
+html.theme-dark,
+html.theme-dark body {
+  background: #222;
+  color: #fafafa;
+}
+
+html.theme-dark a {
+  color: #7ebcff;
+}
+
 .pricingCard {
   width: 100%;
   margin: 2rem auto;
@@ -43,4 +53,13 @@
   margin: 0.75rem 0 1.25rem;
   padding: 0;
   list-style-type: none;
+}
+
+.modal-dialog {
+  color: #212529;
+}
+
+.themeSelector {
+  margin: 2rem auto;
+  width: auto;
 }

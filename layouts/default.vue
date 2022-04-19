@@ -13,6 +13,11 @@
           <Nuxt />
         </b-col>
       </b-row>
+      <b-col>
+        <b-row>
+          <ThemeSelector />
+        </b-row>
+      </b-col>
     </b-container>
     <b-modal
       :visible="modalShow"
@@ -42,6 +47,13 @@ export default {
     clearSelectedPlan() {
       this.$store.commit("choosePlan", null);
     },
+  },
+  head() {
+    return {
+      htmlAttrs: {
+        class: `theme-${this.$store.state.theme}`,
+      },
+    };
   },
 };
 </script>

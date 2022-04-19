@@ -66,4 +66,8 @@ p {
   color: #6c757d;
   font-size: 1.25rem;
 }
+
+html.theme-dark p {
+  color: #b4babe;
+}
 </style>

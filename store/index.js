@@ -41,6 +41,7 @@ export const state = {
     },
   ],
   chosenPlan: null,
+  theme: "light",
 };
 
 export const getters = {
@@ -52,5 +53,8 @@ export const getters = {
 export const mutations = {
   choosePlan: (state, payload) => {
     state.chosenPlan = payload;
+  },
+  setTheme: (state, payload) => {
+    state.theme = payload;
   },
 };
